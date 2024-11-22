@@ -11,6 +11,8 @@ load_dotenv()
 # Host und Port aus der .env-Datei laden
 ollama_host = os.getenv("OLLAMA_HOST")  # Standardwert: localhost
 ollama_port = os.getenv("OLLAMA_PORT", "11434")  # Standardwert: 11434
+base_url=f"{ollama_host}:{ollama_port}"
+#print(base_url)
 
 def generate_answer(query, messages=None, model="llama3.2"):
     """
@@ -27,14 +29,15 @@ def generate_answer(query, messages=None, model="llama3.2"):
         messages = []
 
     # Define the system prompt
-    system_prompt = """You are a helpful assistant that answers questions based on the provided context. 
+    system_prompt = """You are a helpful assistant that answers questions based on the provided context.
     Use only the information from the context to answer the question.
     If you can't find relevant information in the context, say so."""
 
     # ChatOllama mit benutzerdefiniertem Host und Port initialisieren
     chat = ChatOllama(
-        host=ollama_host,
-        port=int(ollama_port),
+        #host=ollama_host,
+        base_url=base_url,
+        #port=int(ollama_port),
         model=model,
         temperature=0.9
     )
@@ -60,7 +63,7 @@ def generate_multimodal_answer(query, image_path, model="llama3.2", messages=Non
         messages = []
 
     # Define the system prompt
-    system_prompt = """You are a multi-modal assistant that answers questions based on the provided context. 
+    system_prompt = """You are a multi-modal assistant that answers questions based on the provided context.
     Use the information from the context and the provided image to answer the question.
     If you can't find relevant information in the context, say so."""
 
