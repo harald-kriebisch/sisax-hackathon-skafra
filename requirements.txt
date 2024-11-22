@@ -38,8 +38,10 @@ httpcore==1.0.7
 httpx==0.27.2
 httpx-sse==0.4.0
 idna==3.10
+importlib_metadata==8.5.0
+importlib_resources==6.4.5
 ipykernel==6.29.5
-ipython==8.29.0
+ipython==8.18.1
 ipywidgets==8.1.5
 isoduration==20.11.0
 jedi==0.19.2
@@ -81,7 +83,7 @@ nbclient==0.10.0
 nbconvert==7.16.4
 nbformat==5.10.4
 nest-asyncio==1.6.0
-networkx==3.4.2
+networkx==3.2.1
 notebook==7.2.2
 notebook_shim==0.2.4
 numpy==1.26.4
@@ -122,7 +124,7 @@ requests-toolbelt==1.0.0
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 rpds-py==0.21.0
-scipy==1.14.1
+scipy==1.13.1
 seaborn==0.13.2
 Send2Trash==1.8.3
 six==1.16.0
@@ -155,3 +157,4 @@ webencodings==0.5.1
 websocket-client==1.8.0
 widgetsnbextension==4.0.13
 yarl==1.17.2
+zipp==3.21.0
